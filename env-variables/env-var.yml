@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx:latest
+    env:
+    - name: NGINX_PORT
+      value: “8080"
+    - name: NGINX_VERSION
+      value: “1.18.6"
