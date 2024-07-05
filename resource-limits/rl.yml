@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    app: nginx-dev
+spec:
+  containers:
+  - name: nginx-cont1
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+    resources:
+      requests:
+        memory: "100Mi"  #  100MiB of memory
+        cpu: "200m"      #  200 millicpu (0.2 CPU cores)
+      limits:
+        memory: "200Mi"  # 200MiB
+        cpu: "500m"      # 500 millicpu (0.5 CPU cores)
