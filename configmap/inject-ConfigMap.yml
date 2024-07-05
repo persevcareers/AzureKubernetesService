@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx:latest
+    env:
+    - name: NGINX_VERSION
+      valueFrom:
+        configMapKeyRef:
+          name: nginx-config
+          key: NGINX_VERSION
+    - name: NGINX_PORT
+      valueFrom:
+        configMapKeyRef:
+          name: nginx-config
+          key: NGINX_PORT
