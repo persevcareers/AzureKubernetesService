@@ -1,4 +1,4 @@
-# Cluster Creation using az cli
+## Cluster Creation using az cli
 ## Create a RG ,
 ```t
 az group create --name dev-cluster --location centralindia
