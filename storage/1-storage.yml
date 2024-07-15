@@ -8,7 +8,5 @@ mountOptions:
   - file_mode=0777
   - uid=0
   - gid=0
-  - mfsymlinks
-  - cache=strict
 parameters:
   skuName: Standard_LRS
