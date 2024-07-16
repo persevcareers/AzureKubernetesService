@@ -1,7 +1,7 @@
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
-  name: my-azurefile-sc
+  name: azurefiles-sc
 provisioner: kubernetes.io/azure-file
 mountOptions:
   - dir_mode=0777
@@ -10,3 +10,4 @@ mountOptions:
   - gid=0
 parameters:
   skuName: Standard_LRS
+  
