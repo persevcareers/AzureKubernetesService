@@ -21,4 +21,4 @@ spec:
       volumes:
       - name: azurefiles-volume
         persistentVolumeClaim:
-          claimName: azurefiles-pvc
+          claimName: afs-pvc
