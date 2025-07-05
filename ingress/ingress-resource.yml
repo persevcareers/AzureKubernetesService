@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: movie-service-ingress
+  name: ssp-service-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
@@ -13,40 +13,13 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: movie-service-v1
+            name: ssp-service-v1
             port:
               number: 80
       - path: /version2
         pathType: Prefix
         backend:
           service:
-            name: movie-service-v2
+            name: ssp-service-v2
             port:
               number: 80
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: example-ingress
-spec:
-  rules:
-    - http:
-        paths:
-          - path: /app1
-            pathType: Prefix
-            backend:
-              service:
-                name: app1-service
-                port:
-                  number: 80
-          - path: /app2
-            pathType: Prefix
-            backend:
-              service:
-                name: app2-service
-                port:
-                  number: 80
-  tls:
-    - hosts:
-        - mydomain.com
-      secretName: mydomain-tls-secret
