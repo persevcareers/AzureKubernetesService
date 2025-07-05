@@ -1,32 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: moviestreaming-deployment-v1
+  name: ssp-deployment-v1
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: movie-dev-v1
+      app: ssp-dev-v1
   template:
     metadata:
       labels:
-        app: movie-dev-v1
+        app: ssp-dev-v1
     spec:
       containers:
-      - name: frontend-moviestreaming
-        image: persevcareers/custom-images:netflix-v1
+      - name: frontend-ssp
+        image: persevcareers6577/deploymentstrategy:v1
         ports:
         - containerPort: 80
-      imagePullSecrets:
-      - name: dockerhub-creds
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: movie-service-v1
+  name: ssp-service-v1
 spec:
   selector:
-    app: movie-dev-v1
+    app: ssp-dev-v1
   ports:
     - protocol: TCP
       port: 80
